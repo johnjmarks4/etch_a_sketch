@@ -1,3 +1,6 @@
+container = document.querySelector('#container');
+container.setAttribute("style", "width: 1060px");
+
 function createGrid() {
   console.log("ran");
   var rowDepth = parseInt(prompt("How many squares should the grid be on the top?"));
@@ -5,7 +8,7 @@ function createGrid() {
     var content = document.querySelector('#container');
     const div = document.createElement("div");
     div.setAttribute("class", "gridRow");
-    div.setAttribute("style", "width: 100%; height: 100px; display: flex; flex-flow: row; flex-wrap: wrap");
+    div.setAttribute("style", "width: 100%; height: 100px; display: flex; flex-flow: row; flex-wrap: nowrap; justify-content: space-between");
     content.appendChild(div);
   }
 }
@@ -18,7 +21,7 @@ function fillRow() {
     for (i=0; i < rowWidth; i++) {
       const div = document.createElement("div");
       div.setAttribute("class", "gridBox");
-      div.setAttribute("style", "width: 60px; height: 60px; margin-left: 20px; margin-top: 20px; order: " + i);
+      div.setAttribute("style", "width: 70px; height: 70px; margin-left: 20px; margin-top: 20px; order: " + i);
       div.addEventListener("mouseover", function() {
         div.style.backgroundColor = "green";
       })
